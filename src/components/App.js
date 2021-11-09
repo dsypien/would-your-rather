@@ -9,8 +9,6 @@ class App extends Component {
   }
 
   render(){
-    const { users } = this.props
-
     return (
       <div className="App">      
         navbar
@@ -21,8 +19,4 @@ class App extends Component {
   } 
 }
 
-function mapStateToProps ({users}){
-  return users
-}
-
-export default connect(mapStateToProps)(App)
+export default connect()(App)
