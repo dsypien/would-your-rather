@@ -1,4 +1,5 @@
 import Login from "./Login"
+import Nav from "./Nav"
 import { connect } from "react-redux"
 import { handleInitialData } from "../actions/shared"
 import React, { Component } from "react"
@@ -11,9 +12,8 @@ class App extends Component {
   render(){
     return (
       <div className="App">      
-        navbar
-        <Login />
-        
+        <Nav />
+        <Login />        
       </div>
     )
   } 
