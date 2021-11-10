@@ -2,14 +2,39 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 
 class Login extends Component{
-   render(){
+   state = {
+      user: ""
+   }
+
+   handleSubmit = (e) => {
+      e.preventDefault()
+
+      if(this.state.user){
+         alert(this.state.user + ' is loggin in')
+      }
+   }
+
+   handleChange = (e) => {
+      const user = e.target.value;
+
+      console.log(user)
+
+      this.setState({
+         user,
+      })
+   }
+   
+   render(){ 
       const { users } = this.props
 
       return (
-         <form className="auth-container mt-3">            
+         <form onSubmit={(e) => this.handleSubmit(e)} className="auth-container mt-3">            
             <h3 className='center mb-3'>Plese log in</h3>
 
-            <select defaultValue="" className="form-control mb-3">
+            <select 
+               defaultValue="" 
+               onChange={this.handleChange}
+               className="form-control mb-3">
                <option value="" disabled>Select user</option>
                {users.map( user => (
                   <option key={user} value={user}>
