@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
+import { setAuthedUser } from "../actions/authedUser"
 
 class Login extends Component{
    state = {
@@ -8,9 +9,14 @@ class Login extends Component{
 
    handleSubmit = (e) => {
       e.preventDefault()
+      const { dispatch } = this.props      
 
       if(this.state.user){
          alert(this.state.user + ' is loggin in')
+          dispatch(setAuthedUser(this.state.user))
+      }
+      else {
+         // TODO: instruct user to select a user from the dropdown
       }
    }
 

@@ -5,7 +5,7 @@ import { getInitialData } from "../utils/api"
 export function handleInitialData() {
    return (dispatch) => {
       return getInitialData()
-         .then(({ users, questions }) => {
+         .then(({ users, questions, authedUser }) => {
             dispatch(receiveUsers(users))
             dispatch(receiveQuestions(questions))
          })
