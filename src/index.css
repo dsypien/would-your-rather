@@ -32,6 +32,13 @@ code {
   margin:20px;
 }
 
+.brand{
+  padding: 0px 20px;
+  font-weight: 700;
+  color:#ddd;
+  font-family: 'Gruppo';font-size: 25px;
+}
+
 .center {
   text-align: center;
 }

@@ -41,9 +41,8 @@ class Login extends Component{
       }
 
       return (
-         <form onSubmit={(e) => this.handleSubmit(e)} className="auth-container mt-3">            
+         <form onSubmit={(e) => this.handleSubmit(e)} className="auth-container mt-3">                        
             <h3 className='center mb-3'>Plese log in</h3>
-
             <select 
                defaultValue="" 
                onChange={this.handleChange}
