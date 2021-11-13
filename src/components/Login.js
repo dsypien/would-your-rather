@@ -1,10 +1,12 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { setAuthedUser } from "../actions/authedUser"
+import { Navigate } from "react-router-dom"
 
 class Login extends Component{
    state = {
-      user: ""
+      user: "",
+      loggedIn : false
    }
 
    handleSubmit = (e) => {
@@ -12,8 +14,10 @@ class Login extends Component{
       const { dispatch } = this.props      
 
       if(this.state.user){
-         alert(this.state.user + ' is loggin in')
           dispatch(setAuthedUser(this.state.user))
+          this.setState({
+             loggedIn: true
+          })
       }
       else {
          // TODO: instruct user to select a user from the dropdown
@@ -21,9 +25,7 @@ class Login extends Component{
    }
 
    handleChange = (e) => {
-      const user = e.target.value;
-
-      console.log(user)
+      const user = e.target.value
 
       this.setState({
          user,
@@ -32,6 +34,11 @@ class Login extends Component{
    
    render(){ 
       const { users } = this.props
+      const { loggedIn } = this.state
+
+      if (loggedIn) {
+         return <Navigate to="/home" />
+      }
 
       return (
          <form onSubmit={(e) => this.handleSubmit(e)} className="auth-container mt-3">            
