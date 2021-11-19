@@ -6,3 +6,10 @@ export function setAuthedUser (id) {
       id,
    }
 }
+
+export function logOut () {
+  return {
+     type: SET_AUTHED_USER,
+     id: null
+  }
+}

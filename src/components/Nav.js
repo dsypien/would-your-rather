@@ -1,21 +1,40 @@
-import React, { Component } from "react"
-import { NavLink } from "react-router-dom"
+import React from "react"
+import { useNavigate } from "react-router-dom"
+import { connect } from "react-redux"
+import { logOut } from "../actions/authedUser"
 
-class Nav extends Component {
-   render (){
-      return (
-         <nav className="navbar navbar-light bg-dark">  
-            <span className="brand">WYR</span>
-            <ul>
+function Nav (props) {   
+   const { authedUser } = props
+   const navigate = useNavigate()
+
+   const handleLogOut = (e) => {
+      e.preventDefault()
+
+      props.dispatch(logOut())    
+      navigate('/')
+   }
+
+   return (
+      <nav className="navbar navbar-light bg-dark">  
+         <span className="brand">WYR</span>
+         <ul>               
+            {authedUser && 
                <li className="nav-item">
-                  <NavLink className="nav-link" to="/" exact activeClassName='active' >
+                  <a href="/#" className="nav-link" onClick={handleLogOut} > 
                      Log out   
-                  </NavLink>
+                  </a>
                </li>
-            </ul>
-         </nav>
-      )      
+            }
+                              
+         </ul>       
+      </nav>
+   )      
+}
+
+function mapStateToProps( { authedUser } ) {
+   return {
+      authedUser,
    }
 }
 
-export default Nav
+export default connect(mapStateToProps)(Nav)

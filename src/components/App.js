@@ -7,12 +7,12 @@ import React, { Component } from "react"
 import { 
   BrowserRouter as Router, 
   Routes,
-  Route 
+  Route
 } from "react-router-dom"
 
 class App extends Component {
   componentDidMount(){
-    this.props.dispatch(handleInitialData())
+    this.props.dispatch(handleInitialData())    
   }
 
   render(){
