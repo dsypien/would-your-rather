@@ -1,5 +1,5 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, NavLink } from "react-router-dom"
 import { connect } from "react-redux"
 import { logOut } from "../actions/authedUser"
 
@@ -17,16 +17,30 @@ function Nav (props) {
    return (
       <nav className="navbar navbar-light bg-dark">  
          <span className="brand">WYR</span>
-         <ul>               
-            {authedUser && 
+         {authedUser && 
+            <ul>
+               <li className="nav-item">
+                  <NavLink to="/home">
+                     Home
+                  </NavLink>
+               </li>
+               <li className="nav-item">
+                  <NavLink to="/question">
+                     New Question
+                  </NavLink>
+                  </li>
+               <li className="nav-item">
+                  <NavLink to="/leaderboard">
+                     Leader Board
+                  </NavLink>
+               </li>
                <li className="nav-item">
                   <a href="/#" className="nav-link" onClick={handleLogOut} > 
                      Log out   
                   </a>
-               </li>
-            }
-                              
-         </ul>       
+               </li>                                                                                                           
+            </ul>       
+         }
       </nav>
    )      
 }

@@ -1,5 +1,7 @@
 import Login from "./Login"
 import Home from "./Home"
+import NewQuestion from "./NewQuestion"
+import Leaderboard from "./Leaderboard"
 import Nav from "./Nav"
 import { connect } from "react-redux"
 import { handleInitialData } from "../actions/shared"
@@ -23,6 +25,8 @@ class App extends Component {
           <Routes>
             <Route path="/" exact element={<Login />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/question" element={<NewQuestion />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
         </div>
       </Router>      
