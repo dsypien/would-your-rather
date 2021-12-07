@@ -28,13 +28,13 @@ class Home extends Component {
             <h2>Answered</h2>
             <ul>
                {answeredQuestions.map( ans => (
-                  <li>{ans.id}</li>
+                  <li key={ans.id}>{ans.id}</li>
                ))} 
             </ul>
             <h2>Unanswered</h2>
             <ul>
                {unansweredQuestions.map( ans => (
-                     <li>{ans.id}</li>
+                     <li key={ans.id}>{ans.id}</li>
                ))} 
             </ul>
          </div>
