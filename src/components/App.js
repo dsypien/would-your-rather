@@ -34,10 +34,4 @@ class App extends Component {
   } 
 }
 
-function mapStateToProps( { authedUser }) {
-  return {
-    authedUser,
-  }
-}
-
 export default connect()(App)

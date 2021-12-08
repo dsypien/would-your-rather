@@ -6,7 +6,7 @@ export default function Poll(props) {
       return (
          <div key={question.id} className="card poll bg-light mb-3">
          <div className="card-header">
-            <img className="avatar" src={users[question.author].avatarURL} />
+            <img alt="avatar" className="avatar" src={users[question.author].avatarURL} />
             { `${users[question.author].name} asks:`}
          </div>
          <div className="card-body">
