@@ -15,25 +15,32 @@ function Nav (props) {
    }
 
    return (
-      <nav className="navbar navbar-light bg-dark">  
-         <span className="brand">WYR</span>
-         {authedUser && 
-            <ul>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">  
+         <a className="brand navbar-brand" href="#">WYR</a>
+         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+         </button>
+         {authedUser &&          
+            <ul className="navbar-nav mr-atuo">
                <li className="nav-item">
-                  <NavLink to="/home">
+                  <NavLink className="nav-link" to="/home">
                      Home
                   </NavLink>
                </li>
                <li className="nav-item">
-                  <NavLink to="/question">
+                  <NavLink className="nav-link" to="/question">
                      New Question
                   </NavLink>
                   </li>
                <li className="nav-item">
-                  <NavLink to="/leaderboard">
+                  <NavLink className="nav-link" to="/leaderboard">
                      Leader Board
                   </NavLink>
                </li>
+               <span className="nav-item nav-text">
+                  Hello {authedUser.name}
+                  <img className="avatar" src={authedUser.avatarURL} />
+               </span>               
                <li className="nav-item">
                   <a href="/#" className="nav-link" onClick={handleLogOut} > 
                      Log out   
@@ -45,9 +52,9 @@ function Nav (props) {
    )      
 }
 
-function mapStateToProps( { authedUser } ) {
+function mapStateToProps( { authedUser, users } ) {
    return {
-      authedUser,
+      authedUser: users[authedUser],
    }
 }
 
