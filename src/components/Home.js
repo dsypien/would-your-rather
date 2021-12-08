@@ -1,6 +1,7 @@
 import React, { Component } from 'react' 
 import PollList from './PollList'
 import { connect } from 'react-redux'
+import {Tab, Tabs } from 'react-bootstrap'
 
 class Home extends Component {
    render () {
@@ -23,14 +24,22 @@ class Home extends Component {
                                           ary.push(question)
                                           return ary
                                        }, [])
-                                       
+                   
       return (
          <div>
-            <h2>Answered</h2>
-            <PollList questions={answeredQuestions} users={users}/>
-            
-            <h2>Unanswered</h2>
-            <PollList questions={unansweredQuestions} users={users}/>
+            <Tabs
+               id="controlled-tab-example"
+               adefaultActiveKey="answered"
+               transition={false}
+               className="mb-3"
+            >
+               <Tab eventKey="answered" title="Answered">
+                  <PollList questions={answeredQuestions} users={users}/>
+               </Tab>
+               <Tab eventKey="unanswered" title="Unanswered">
+                  <PollList questions={unansweredQuestions} users={users}/>
+               </Tab>               
+            </Tabs>
          </div>
       )
    }
