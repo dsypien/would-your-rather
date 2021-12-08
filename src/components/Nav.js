@@ -16,7 +16,7 @@ function Nav (props) {
 
    return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">  
-         <a className="brand navbar-brand" href="#">WYR</a>
+         <a className="brand navbar-brand" href="/#">WYR</a>
          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
          </button>
@@ -39,7 +39,7 @@ function Nav (props) {
                </li>
                <span className="nav-item nav-text">
                   Hello {authedUser.name}
-                  <img className="avatar" src={authedUser.avatarURL} />
+                  <img className="avatar" alt="avatar" src={authedUser.avatarURL} />
                </span>               
                <li className="nav-item">
                   <a href="/#" className="nav-link" onClick={handleLogOut} > 

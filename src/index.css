@@ -55,6 +55,10 @@ code {
   vertical-align: middle;
 }
 
+.poll {
+  max-width: 18rem;
+}
+
 @media (min-width: 992px) {
   .nav-text {
     margin: 0px 24px;

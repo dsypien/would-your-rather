@@ -1,9 +1,10 @@
 import React, { Component } from 'react' 
+import PollList from './PollList'
 import { connect } from 'react-redux'
 
 class Home extends Component {
    render () {
-      const { authedUser, questions } = this.props
+      const { authedUser, questions, users } = this.props
       const answers = authedUser ? Object.keys(authedUser.answers) : []
 
       const answeredQuestions = Object.keys(questions)
@@ -22,21 +23,14 @@ class Home extends Component {
                                           ary.push(question)
                                           return ary
                                        }, [])
-
+                                       
       return (
          <div>
             <h2>Answered</h2>
-            <ul>
-               {answeredQuestions.map( ans => (
-                  <li key={ans.id}>{ans.id}</li>
-               ))} 
-            </ul>
+            <PollList questions={answeredQuestions} users={users}/>
+            
             <h2>Unanswered</h2>
-            <ul>
-               {unansweredQuestions.map( ans => (
-                     <li key={ans.id}>{ans.id}</li>
-               ))} 
-            </ul>
+            <PollList questions={unansweredQuestions} users={users}/>
          </div>
       )
    }
@@ -45,8 +39,8 @@ class Home extends Component {
 function mapStateToProps ( {questions, users, authedUser} ){
    return {
       questions,
-      authedUser : users[authedUser],
-      answeredQuestions: questions[authedUser]
+      users,
+      authedUser : users[authedUser],      
    }
 } 
 
