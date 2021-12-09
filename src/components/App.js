@@ -11,6 +11,7 @@ import {
   Routes,
   Route
 } from "react-router-dom"
+import PollDetails from "./PollDetails"
 
 class App extends Component {
   componentDidMount(){
@@ -22,11 +23,12 @@ class App extends Component {
       <Router>
         <div className="App">      
           <Nav />   
-          <main role="main" className="container">
+          <main role="main" className="container-sm">
             <Routes>
               <Route path="/" exact element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/question" element={<NewQuestion />} />
+              <Route path="/questions/:id" element={<PollDetails />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
             </Routes>
           </main>

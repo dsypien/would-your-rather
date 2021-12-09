@@ -7,7 +7,7 @@ export default function PollList (props) {
  return (
    <div>
       {questions.map( question => (
-         <Poll question={question} users={users} />
+         <Poll key={question.id} question={question} users={users} />
       ))} 
    </div>
  )
