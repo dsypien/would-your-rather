@@ -8,6 +8,8 @@ class Home extends Component {
       const { authedUser, questions, users } = this.props
       const answers = authedUser ? Object.keys(authedUser.answers) : []
 
+      // Move answeredQuestions and unansweredQuestions to mapStateToProps
+      // Look at tweet Dashboard for example
       const answeredQuestions = Object.keys(questions)
                                       .filter( (e) => answers.includes(e))
                                       .reduce( (ary, key) => { 
@@ -29,16 +31,16 @@ class Home extends Component {
          <div>
             <Tabs
                id="controlled-tab-example"
-               adefaultActiveKey="answered"
+               defaultActiveKey="unanswered"
                transition={false}
                className="mb-3"
             >
-               <Tab eventKey="answered" title="Answered">
-                  <PollList questions={answeredQuestions} users={users}/>
-               </Tab>
                <Tab eventKey="unanswered" title="Unanswered">
                   <PollList questions={unansweredQuestions} users={users}/>
-               </Tab>               
+               </Tab>   
+               <Tab eventKey="answered" title="Answered">
+                  <PollList questions={answeredQuestions} users={users}/>
+               </Tab>                           
             </Tabs>
          </div>
       )
