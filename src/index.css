@@ -32,13 +32,6 @@ code {
   margin:20px;
 }
 
-.brand{
-  padding: 0px 20px;
-  font-weight: 700;
-  color:#ddd;
-  font-family: 'Gruppo';font-size: 25px;
-}
-
 .center {
   text-align: center;
 }
@@ -51,12 +44,56 @@ code {
   float: right;
 }
 
+.navbar-brand{
+  padding: 0px 20px;
+  font-weight: 700;
+  color:#ddd;
+  font-family: 'Gruppo';font-size: 25px;
+}
+
+.navbar-toggler {
+  margin: 0px 20px;
+}
+
+.navbar-nav {
+  margin-right: 10px;
+}
+
 .avatar {
   margin: 0px 8px;
   height: 24px;
   width: 24px;
   border-radius: 50px;
   vertical-align: middle;
+}
+
+.avatar-lg {
+  margin: 0px 8px;
+  width: 100px;
+  border-radius: 90px;
+  vertical-align: middle;
+}
+
+.avatar-container {
+  width:128px;
+}
+
+.flex-container {
+  display: flex;
+  margin: 12px;
+}
+
+.poll-body {
+  margin: 0 8px;
+  flex-grow: 1;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
 }
 
 @media (min-width: 992px) {
