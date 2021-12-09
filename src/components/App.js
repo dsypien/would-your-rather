@@ -22,12 +22,14 @@ class App extends Component {
       <Router>
         <div className="App">      
           <Nav />   
-          <Routes>
-            <Route path="/" exact element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/question" element={<NewQuestion />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-          </Routes>
+          <main role="main" className="container">
+            <Routes>
+              <Route path="/" exact element={<Login />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/question" element={<NewQuestion />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+            </Routes>
+          </main>
         </div>
       </Router>      
     )

@@ -47,16 +47,16 @@ code {
   color:rgba(255,255,255,.55);
 }
 
+.nav-user {
+  float: right;
+}
+
 .avatar {
   margin: 0px 8px;
   height: 24px;
   width: 24px;
   border-radius: 50px;
   vertical-align: middle;
-}
-
-.poll {
-  max-width: 18rem;
 }
 
 @media (min-width: 992px) {
