@@ -5,27 +5,7 @@ import {Tab, Tabs } from 'react-bootstrap'
 
 class Home extends Component {
    render () {
-      const { authedUser, questions, users } = this.props
-      const answers = authedUser ? Object.keys(authedUser.answers) : []
-
-      // Move answeredQuestions and unansweredQuestions to mapStateToProps
-      // Look at tweet Dashboard for example
-      const answeredQuestions = Object.keys(questions)
-                                      .filter( (e) => answers.includes(e))
-                                      .reduce( (ary, key) => { 
-                                         let question = questions[key]  
-                                         question.answer = answers[key]
-                                         ary.push(question)
-                                         return ary
-                                       }, [])
-
-      const unansweredQuestions = Object.keys(questions)
-                                        .filter( (e) => !answers.includes(e))
-                                        .reduce( (ary, key) => { 
-                                          let question = questions[key]  
-                                          ary.push(question)
-                                          return ary
-                                       }, [])
+      const { users, answeredQuestions, unansweredQuestions } = this.props
                    
       return (
          <div>
@@ -47,10 +27,26 @@ class Home extends Component {
 }
 
 function mapStateToProps ( {questions, users, authedUser} ){
+   const user = users[authedUser]
+   const answers = authedUser ? Object.keys(user.answers) : []
+
    return {
-      questions,
       users,
-      authedUser : users[authedUser],      
+      answeredQuestions: Object.keys(questions)
+                               .filter( (e) => answers.includes(e))
+                               .reduce( (ary, key) => { 
+                                  let question = questions[key]  
+                                  question.answer = answers[key]
+                                  ary.push(question)
+                                  return ary
+                               }, []),
+      unansweredQuestions: Object.keys(questions)
+                                 .filter( (e) => !answers.includes(e))
+                                 .reduce( (ary, key) => { 
+                                 let question = questions[key]  
+                                 ary.push(question)
+                                 return ary
+                                 }, [])
    }
 } 
 
