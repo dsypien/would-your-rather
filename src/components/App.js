@@ -23,7 +23,7 @@ class App extends Component {
       <Router>
         <div className="App">      
           <Nav />   
-          <main role="main" className="container-sm">
+          <main role="main" className="container">
             <Routes>
               <Route path="/" exact element={<Login />} />
               <Route path="/home" element={<Home />} />

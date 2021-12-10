@@ -96,6 +96,15 @@ code {
   float: left;
 }
 
+.poll-body label {
+  padding: 2px 8px;
+}
+
+.poll-body button {
+  width: 66%;
+  margin: 12px 0px; 
+}
+
 @media (min-width: 992px) {
   .nav-text {
     margin: 0px 24px;

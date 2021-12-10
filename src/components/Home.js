@@ -33,13 +33,12 @@ class Home extends Component {
                id="controlled-tab-example"
                defaultActiveKey="unanswered"
                transition={false}
-               className="mb-3"
-            >
+               className="mb-3">
                <Tab eventKey="unanswered" title="Unanswered">
-                  <PollList questions={unansweredQuestions} users={users}/>
+                  <PollList questions={unansweredQuestions} users={users} name="unanswered"/>
                </Tab>   
                <Tab eventKey="answered" title="Answered">
-                  <PollList questions={answeredQuestions} users={users}/>
+                  <PollList questions={answeredQuestions} users={users} name="answered"/>
                </Tab>                           
             </Tabs>
          </div>

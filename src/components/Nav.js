@@ -16,7 +16,7 @@ function Navigation (props) {
    }
 
    return (
-      <Navbar expand="lg" bg="dark" variant="dark">  
+      <Navbar expand="md" bg="dark" variant="dark">  
          <Navbar.Brand href="/#">WYR</Navbar.Brand>
          {authedUser && 
             <div className="nav-item nav-text float-left">

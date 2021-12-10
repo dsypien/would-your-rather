@@ -23,7 +23,7 @@ export default function Poll(props) {
                <div className="poll-body">
                   <h5 className="card-title">Would you rather...</h5>
                   <p className="card-text"> {question.optionOne.text} <b>or</b> {question.optionTwo.text} </p>
-                  <Button className="float-right" onClick={(e) => viewPoll(e)}>View Poll</Button>
+                  <Button onClick={(e) => viewPoll(e)}>View Poll</Button>
                </div>         
             </div>            
          </div>
