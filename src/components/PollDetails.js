@@ -1,37 +1,26 @@
-import React, { useState } from "react"
+import React from "react"
 import { connect } from "react-redux"
 import { useParams } from "react-router-dom"
-import { Button } from "react-bootstrap"
-import { saveUserAnswer } from "../actions/users"
+import PollDetailsQuestion from "./PollDetailsQuestion"
+import PollDetailsResult from "./PollDetailsResult"
 
 function PollDetails (props) {
    const { id } = useParams()
    const { questions, users, authedUser } = props
    const question = questions[id]
 
-   const [answer, setAnswer] = useState(null)
-   const radios = [
-      { name: 'optionOne', value: 'optionOne', label: question.optionOne.text },
-      { name: 'optionTwo', value: 'optionTwo', label: question.optionTwo.text },
-    ];
+   let pollBody 
 
-   function handleOptionChange(e) {
-      setAnswer(e.target.value)
+   if(question.id in users[authedUser].answers) {
+      pollBody = <PollDetailsResult question={question} />  
    }
-
-   function handleSubmit(e) {
-      e.preventDefault()
-
-      if(answer !== null){
-         props.dispatch(saveUserAnswer(authedUser.id, question.id, answer))
-      }
+   else {
+      pollBody = <PollDetailsQuestion question={question}/>
    }
 
    return (
       <div>
-         <form 
-            onSubmit={handleSubmit}
-            className="card poll bg-light mb-3">
+         <div className="card poll bg-light mb-3">
             <div className="card-header">
                { `${users[question.author].name} asks:`}
             </div>
@@ -39,26 +28,11 @@ function PollDetails (props) {
                <div className=" avatar-container">
                   <img alt="avatar" className="avatar-lg" src={users[question.author].avatarURL} />
                </div>
-               <div className="poll-body">
-                  
-                  <h5 className="card-title">Would you rather...</h5>
-                  <div>
-                     { radios.map( radio => (
-                        <div key={radio.name}>
-                           <input type="radio" 
-                                    onChange={ e => handleOptionChange(e) }
-                                    id={radio.name}
-                                    name={radio.name}
-                                    checked={radio.value === answer} 
-                                    value={radio.value} />
-                           <label htmlFor={radio.name}>{radio.label}</label>
-                        </div>
-                     ))}
-                  </div>
-                  <Button type="submit">Submit</Button>
+               <div className="poll-body">                  
+                  {pollBody}
                </div>         
             </div>            
-         </form>
+         </div>
       </div>
    )
 }
@@ -67,7 +41,7 @@ function mapStateToProps( { questions, users, authedUser } ){
    return {
       questions,
       users,
-      authedUser: users[authedUser]
+      authedUser,
    }
 }
 
