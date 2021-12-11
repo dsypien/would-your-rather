@@ -1,5 +1,6 @@
 import React from 'react' 
 import { connect } from 'react-redux'
+import PollDetailsOptionResult from './PollDetailsOptionResult'
 
 function PollDetailsResult (params) {
    const { question, questions, users, authedUser } = params
@@ -17,16 +18,14 @@ function PollDetailsResult (params) {
    return (
       <div>
          <h5 className="card-title">Results...</h5>
-         <div className="card poll bg-light mb-3">
-            <div>Would rather {question.optionOne.text}</div>
-            <div>{ 100 * (pollResults.optionOne / (pollResults.optionOne + pollResults.optionTwo))}%</div>
-            <div>{`${pollResults.optionOne} out of ${pollResults.optionOne + pollResults.optionTwo} votes`}</div>
-         </div>
-         <div className="card poll bg-light mb-3">
-            <div>Would rather {question.optionTwo.text}</div>
-            <div>{ 100 * (pollResults.optionTwo / (pollResults.optionOne + pollResults.optionTwo))}%</div>
-            <div>{`${pollResults.optionTwo} out of ${pollResults.optionOne + pollResults.optionTwo} votes`}</div>
-         </div>
+         <PollDetailsOptionResult 
+            option={question.optionOne} 
+            selectedCount={pollResults.optionOne}
+            totalCount={pollResults.optionOne + pollResults.optionTwo} />         
+         <PollDetailsOptionResult 
+            option={question.optionTwo} 
+            selectedCount={pollResults.optionTwo}
+            totalCount={pollResults.optionOne + pollResults.optionTwo} />
       </div>
    )
 }
