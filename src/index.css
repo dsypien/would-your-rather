@@ -100,9 +100,23 @@ code {
   padding: 2px 8px;
 }
 
+.poll-option {
+  padding: 8px 16px;
+}
+
+.poll-option-text {
+  font-weight: 700;
+}
+
 .poll-body button {
   width: 66%;
   margin: 12px 0px; 
+}
+
+.progress {
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 @media (min-width: 992px) {
