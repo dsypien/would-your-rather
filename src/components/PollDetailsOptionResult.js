@@ -3,7 +3,7 @@ import { ProgressBar } from "react-bootstrap"
 
 function PollDetailsOptionResult (params) {
    const { option, selectedCount, totalCount, selectedByAuthedUser } = params
-   const percentSelected = 100 * (selectedCount / totalCount)
+   const percentSelected = (100 * (selectedCount / totalCount)).toFixed(1)
 
    return (
       <div className={`${selectedByAuthedUser ? "selected-option": ""} card poll-option bg-light mb-3`}>
