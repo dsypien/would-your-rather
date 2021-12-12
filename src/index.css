@@ -101,7 +101,7 @@ code {
 }
 
 .poll-option {
-  padding: 8px 16px;
+  padding: 8px 24px;
 }
 
 .poll-option-text {
@@ -111,6 +111,26 @@ code {
 .poll-body button {
   width: 66%;
   margin: 12px 0px; 
+}
+
+.user-choice {
+  position: absolute;
+  padding: 10px 0px;
+  text-align: center;
+  width: 60px;
+  background-color: #ffc107!important;
+  color: #000000;
+  font-size: 16px;
+  height: 60px;
+  border-radius: 90px;
+  line-height: 15px;
+  right: -16px;
+  bottom: -10px;
+}
+
+.selected-option {
+  background-color: #007bff!important;
+  color: #ffffff
 }
 
 .progress {
