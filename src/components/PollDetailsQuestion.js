@@ -25,7 +25,7 @@ function PollDetailsQuestion (props) {
 
    return (
       <form onSubmit={handleSubmit}>
-         <h5 className="card-title">Would you rather...</h5>
+         <h3 className="card-title">Would you rather...</h3>
          <div>
             { radios.map( radio => (
                <div key={radio.name}>

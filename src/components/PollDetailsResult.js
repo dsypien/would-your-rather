@@ -18,7 +18,7 @@ function PollDetailsResult (params) {
    
    return (
       <div>
-         <h5 className="card-title">Results...</h5>
+         <h3 className="card-title">Results...</h3>
          <PollDetailsOptionResult 
             option={question.optionOne} 
             selectedCount={pollResults.optionOne}
