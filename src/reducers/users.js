@@ -13,10 +13,7 @@ export default function users(state = {}, action){
 
          return {
             ...state,
-            [action.userId] : {
-               ...state[action.userId],
-               answers: answers
-            }
+            users,
          }
       default:
          return state

@@ -1,10 +1,10 @@
 import React, { useState } from 'react' 
-import { saveUserAnswer } from '../actions/users'
+import { handleSaveUserAnswer } from '../actions/users'
 import { connect } from 'react-redux'
 import { Button } from "react-bootstrap"
 
 function PollDetailsQuestion (props) {
-   const { question, authedUser } = props
+   const { question } = props
    const [answer, setAnswer] = useState(null)
    const radios = [
       { name: 'optionOne', value: 'optionOne', label: question.optionOne.text },
@@ -19,7 +19,7 @@ function PollDetailsQuestion (props) {
       e.preventDefault()
 
       if(answer !== null){
-         props.dispatch(saveUserAnswer(authedUser, question.id, answer))
+         props.dispatch(handleSaveUserAnswer(question.id, answer))
       }
    }
 
@@ -44,10 +44,4 @@ function PollDetailsQuestion (props) {
    )
 }
 
-function mapStateToProps( {authedUser} ) {
-   return {
-      authedUser,
-   }
-}
-
-export default connect(mapStateToProps)(PollDetailsQuestion)
+export default connect()(PollDetailsQuestion)
