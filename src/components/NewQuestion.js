@@ -1,13 +1,25 @@
 import React, { useState } from "react"
 import { Button } from "react-bootstrap"
+import { handleAddQuestion } from "../actions/questions"
+import { connect } from "react-redux"
 
-export default function NewQuestion (params) {
+function NewQuestion (props) {
    const [option1, setOption1] = useState("")
    const [option2, setOption2] = useState("")
 
+   function handleSubmit (e) {
+      e.preventDefault();
+
+      if (option1.trim() !== "" && option2.trim() !== "") {
+         props.dispatch(handleAddQuestion(option1, option2))
+      }
+
+      //Todo notify user that something happened
+   }
+
    return (
       <div className="card bg-light mb-3">
-         <form>
+         <form onSubmit={(e) => handleSubmit(e)}>
             <h3 className="card-header">Create New Question</h3>
             <div>Complete the question:</div>
             <h5>Would you rather...</h5>
@@ -22,8 +34,10 @@ export default function NewQuestion (params) {
                      onChange={ (e) => setOption2(e.target.value) }
                      placeholder="Enter Option Two Text Here" />
             </div>
-            <Button>Submit</Button>
+            <Button type="submit">Submit</Button>
          </form>
       </div>      
    )
 }
+
+export default connect()(NewQuestion)
