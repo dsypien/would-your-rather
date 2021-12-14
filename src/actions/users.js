@@ -2,10 +2,12 @@ import { _saveQuestionAnswer } from "../utils/_DATA"
 export const RECEIVE_USERS = 'RECEIVE_USERS'
 export const SAVE_USER_ANSWER = 'SAVE_USER_ANSWER'
 
-function saveUserAnswer(users) {
+function saveUserAnswer(authedUser, qid, answer) {
    return {
       type: SAVE_USER_ANSWER,
-      users,
+      authedUser,
+      qid,
+      answer,
    }
 }
 
@@ -19,7 +21,7 @@ export function handleSaveUserAnswer(qid, answer) {
          answer})
             .then(() => {
                const { users } = getState()
-               dispatch(saveUserAnswer(users))
+               dispatch(saveUserAnswer(authedUser, qid, answer))
             })
    }
 }

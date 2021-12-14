@@ -28,7 +28,7 @@ function PollDetails (props) {
                <div className=" avatar-container">
                   <img alt="avatar" className="avatar-lg" src={users[question.author].avatarURL} />
                </div>
-               <div className="poll-body">                  
+               <div className="card-body">                  
                   {pollBody}
                </div>         
             </div>            

@@ -20,7 +20,7 @@ export default function Poll(props) {
                <div className=" avatar-container">
                   <img alt="avatar" className="avatar-lg" src={users[question.author].avatarURL} />
                </div>
-               <div className="poll-body">
+               <div className="card-body">
                   <h3 className="card-title">Would you rather...</h3>
                   <p className="card-text"> {question.optionOne.text} <b>or</b> {question.optionTwo.text} </p>
                   <Button onClick={(e) => viewPoll(e)}>View Poll</Button>

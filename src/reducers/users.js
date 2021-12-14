@@ -7,14 +7,17 @@ export default function users(state = {}, action){
             ...state,
             ...action.users
          }
-      case SAVE_USER_ANSWER:
-         let answers = state[action.userId].answers
-         answers[action.questionId] = action.answer
+      case SAVE_USER_ANSWER:         
+         let answers = state[action.authedUser].answers
+         answers[action.qid] = action.answer
 
          return {
             ...state,
-            users,
-         }
+            [action.authedUser] : {
+               ...state[action.authedUser],
+               answers: answers
+            }
+         }            
       default:
          return state
    }

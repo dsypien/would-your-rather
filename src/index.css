@@ -83,9 +83,22 @@ code {
   margin: 12px;
 }
 
-.poll-body {
+.card-body {
   margin: 0 8px;
   flex-grow: 1;
+}
+
+.card-body label {
+  padding: 2px 8px;
+}
+
+.card-body button {
+  width: 100%;
+  margin: 12px 0px; 
+}
+
+.card-body input[type=text] {
+  width: 100%;
 }
 
 .float-right {
@@ -96,21 +109,12 @@ code {
   float: left;
 }
 
-.poll-body label {
-  padding: 2px 8px;
-}
-
 .poll-option {
   padding: 8px 24px;
 }
 
 .poll-option-text {
   font-weight: 700;
-}
-
-.poll-body button {
-  width: 66%;
-  margin: 12px 0px; 
 }
 
 .user-choice {
