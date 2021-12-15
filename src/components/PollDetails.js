@@ -20,7 +20,7 @@ function PollDetails (props) {
 
    return (
       <div>
-         <div className="card poll bg-light mb-3">
+         <div className="card poll bg-light mt-3">
             <div className="card-header">
                { `${users[question.author].name} asks:`}
             </div>

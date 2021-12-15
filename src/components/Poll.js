@@ -12,7 +12,7 @@ export default function Poll(props) {
       }
 
       return (
-         <div key={question.id} className="card poll bg-light mb-3">
+         <div key={question.id} className="card poll bg-light mt-3">
             <div className="card-header">
                { `${users[question.author].name} asks:`}
             </div>
