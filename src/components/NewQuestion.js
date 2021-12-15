@@ -18,20 +18,20 @@ function NewQuestion (props) {
    }
 
    return (
-      <div className="card bg-light mb-3">
+      <div className="card bg-light mt-3">
          <form onSubmit={(e) => handleSubmit(e)}>
             <h3 className="card-header">Create New Question</h3>
             <div className="card-body">
-               <div>Complete the question:</div>
-               <h3 className="card-title">Would you rather...</h3>
-               <div>
+               <div className="small-font mb-1">Complete the question:</div>
+               <h3 className="card-title mb-3">Would you rather...</h3>
+               <div className="mb-1">
                   <input type="text" 
                          value={option1} 
                          onChange={ (e) => setOption1(e.target.value) }
                          placeholder="Enter Option One Text Here" />
                   </div>
-               <div>OR</div>
-               <div>
+               <div className="center mb-1"><b> OR </b></div>
+               <div className="mb-1">
                   <input type="text" 
                         value={option2} 
                         onChange={ (e) => setOption2(e.target.value) }
