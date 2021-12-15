@@ -20,7 +20,6 @@ export function handleSaveUserAnswer(qid, answer) {
          qid,
          answer})
             .then(() => {
-               const { users } = getState()
                dispatch(saveUserAnswer(authedUser, qid, answer))
             })
    }
