@@ -35,7 +35,7 @@ function Navigation (props) {
                         </Nav.Link>
                      </li>
                      <li className="nav-item">
-                        <Nav.Link as={NavLink} to="/question">
+                        <Nav.Link as={NavLink} to="/add">
                            New Question
                         </Nav.Link>
                         </li>

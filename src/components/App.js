@@ -27,7 +27,7 @@ class App extends Component {
             <Routes>
               <Route path="/" exact element={<Login />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/question" element={<NewQuestion />} />
+              <Route path="/add" element={<NewQuestion />} />
               <Route path="/questions/:id" element={<PollDetails />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
             </Routes>
