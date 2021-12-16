@@ -2,19 +2,20 @@ import React, { useState } from "react"
 import { Button } from "react-bootstrap"
 import { handleAddQuestion } from "../actions/questions"
 import { connect } from "react-redux"
+import { useNavigate } from "react-router"
 
 function NewQuestion (props) {
+   const navigate = useNavigate()
    const [option1, setOption1] = useState("")
    const [option2, setOption2] = useState("")
 
-   function handleSubmit (e) {
+   function handleSubmit (e) {      
       e.preventDefault();
 
       if (option1.trim() !== "" && option2.trim() !== "") {
          props.dispatch(handleAddQuestion(option1, option2))
-      }
-
-      //Todo notify user that something happened
+         navigate("/home")
+      }      
    }
 
    return (
