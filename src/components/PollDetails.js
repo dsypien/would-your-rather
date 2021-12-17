@@ -19,7 +19,10 @@ function PollDetails (props) {
 
    let pollBody 
 
-   if (question && question.id in users[authedUser].answers) {
+   if (question === undefined){
+      pollBody = <div><h1>404</h1><h3>Page not found.</h3></div>
+   }
+   else if (question && question.id in users[authedUser].answers) {
       pollBody = <PollDetailsResult question={question} />  
    }
    else if (authedUser) {
@@ -30,11 +33,11 @@ function PollDetails (props) {
       <div>
          <div className="card poll bg-light mt-3">
             <div className="card-header">
-               { authedUser && `${users[question.author].name} asks:`}
+               { authedUser && question && `${users[question.author].name} asks:`}
             </div>
             <div className="flex-container">
                <div className=" avatar-container">
-                  {authedUser && <img alt="avatar" className="avatar-lg" src={users[question.author].avatarURL} />}                  
+                  {authedUser && question && <img alt="avatar" className="avatar-lg" src={users[question.author].avatarURL} />}                  
                </div>
                <div className="card-body">                  
                   {pollBody}
