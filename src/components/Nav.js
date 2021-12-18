@@ -16,43 +16,39 @@ function Navigation (props) {
    }
 
    return (
-      <Navbar expand="md" bg="dark" variant="dark">  
-         <Navbar.Brand href="/#">WYR</Navbar.Brand>
-         {authedUser && 
-            <div className="nav-item nav-text float-left">
-               Hello {authedUser.name}
-               <img className="avatar" alt="avatar" src={authedUser.avatarURL} />
-            </div>  
-         }          
-         {authedUser &&      
-            <div>
-               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-               <Navbar.Collapse id="responsive-navbar-nav">
-                  <Nav className="mr-auto">
-                     <li className="nav-item">
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">  
+         <div className="container">
+            <Navbar.Brand href="/#">WYR</Navbar.Brand>
+            {authedUser && 
+               <div className="nav-item nav-text">
+                  Hello {authedUser.name}
+                  <img className="avatar" alt="avatar" src={authedUser.avatarURL} />
+               </div>  
+            }          
+            {authedUser &&      
+               <div>
+                  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                  <Navbar.Collapse id="responsive-navbar-nav">
+                     <Nav className="me-auto">
                         <Nav.Link as={NavLink} to="/home">
                            Home
                         </Nav.Link>
-                     </li>
-                     <li className="nav-item">
                         <Nav.Link as={NavLink} to="/add">
                            New Question
                         </Nav.Link>
-                        </li>
-                     <li className="nav-item">
                         <Nav.Link as={NavLink} to="/leaderboard">
                            Leader Board
                         </Nav.Link>
-                     </li>                          
-                     <li className="nav-item">
-                        <a href="/#" className="nav-link" onClick={handleLogOut} > 
-                           Log out   
-                        </a>
-                     </li>                                                                                                           
-                  </Nav>       
-               </Navbar.Collapse>
-            </div>
-         }
+                        <div className="nav-item">
+                           <a href="/#" className="nav-link" onClick={handleLogOut} > 
+                              Log out   
+                           </a>
+                        </div>                                                                                                           
+                     </Nav>       
+                  </Navbar.Collapse>
+               </div>
+            }
+         </div>
       </Navbar>
    )      
 }
