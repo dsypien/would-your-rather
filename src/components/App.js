@@ -2,6 +2,7 @@ import Login from "./Login"
 import Home from "./Home"
 import NewQuestion from "./NewQuestion"
 import Leaderboard from "./Leaderboard"
+import PageNotFound from "./PageNotFound"
 import Nav from "./Nav"
 import { connect } from "react-redux"
 import { handleInitialData } from "../actions/shared"
@@ -25,6 +26,7 @@ class App extends Component {
           <Nav />   
           <main role="main" className="container">
             <Routes>
+              <Route path='*' element={<PageNotFound />} />
               <Route path="/" exact element={<Login />} />
               <Route path="/home" element={<Home />} />
               <Route path="/add" element={<NewQuestion />} />
