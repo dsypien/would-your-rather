@@ -1,18 +1,20 @@
 import React from "react"
-import { useNavigate, NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { Nav, Navbar } from "react-bootstrap"
 import { connect } from "react-redux"
-import { logOut } from "../actions/authedUser"
+import useAuth from "./useAuth"
+
 
 function Navigation (props) {   
    const { authedUser } = props
+   const { logout } = useAuth()
    const navigate = useNavigate()
 
    const handleLogOut = (e) => {
       e.preventDefault()
-
-      props.dispatch(logOut())    
-      navigate('/')
+      logout().then(() => {
+         navigate("/")
+      })
    }
 
    return (

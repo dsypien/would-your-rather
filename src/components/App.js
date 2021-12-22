@@ -7,6 +7,7 @@ import Nav from "./Nav"
 import { connect } from "react-redux"
 import { handleInitialData } from "../actions/shared"
 import React, { Component } from "react"
+import RequireAuth from "./RequireAuth"
 import { 
   BrowserRouter as Router, 
   Routes,
@@ -27,11 +28,32 @@ class App extends Component {
           <main role="main" className="container">
             <Routes>
               <Route path='*' element={<PageNotFound />} />
+              <Route path='/404' element={<PageNotFound />} />
               <Route path="/" exact element={<Login />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/add" element={<NewQuestion />} />
-              <Route path="/questions/:id" element={<PollDetails />} />
-              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/home" element={
+                  <RequireAuth>
+                    <Home />
+                  </RequireAuth>
+                } 
+              />
+              <Route path="/add" element={
+                  <RequireAuth>
+                    <NewQuestion />
+                  </RequireAuth>
+                } 
+              />
+              <Route path="/questions/:id" element={
+                  <RequireAuth>
+                    <PollDetails />
+                  </RequireAuth>
+                } 
+              />
+              <Route path="/leaderboard" element={
+                  <RequireAuth>
+                    <Leaderboard />
+                  </RequireAuth>
+                } 
+              />
             </Routes>
           </main>
         </div>
