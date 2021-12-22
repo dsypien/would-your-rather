@@ -13,7 +13,8 @@ function PageNotFound (props){
    })
 
    return (
-      <div>
+      <div className="mt-5 center">
+         <img src="/404.png" alt="sad keanu" className="w-200" />
          <h1>404</h1>
          <h3>Page Not Found</h3>
       </div>
