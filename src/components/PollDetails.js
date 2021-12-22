@@ -12,15 +12,15 @@ function PollDetails (props) {
    const navigate = useNavigate()
 
    useEffect(() => {
-      if(!authedUser){
-         navigate("/")
+      if(question === undefined){
+         navigate("/404")
       }
-   }, [navigate, authedUser])
+   }, [navigate, question])
 
    let pollBody 
 
    if (question === undefined){
-      pollBody = <div><h1>404</h1><h3>Page not found.</h3></div>
+      pollBody = ""
    }
    else if (question && question.id in users[authedUser].answers) {
       pollBody = <PollDetailsResult question={question} />  

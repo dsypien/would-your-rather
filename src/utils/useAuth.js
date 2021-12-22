@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { logOut } from "../actions/authedUser"
 import { setAuthedUser } from "../actions/authedUser"
-import store from "../utils/store"
+import store from "./store"
 
 const authContext = React.createContext()
 function useAuth () {

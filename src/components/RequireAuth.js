@@ -1,5 +1,5 @@
 import React from "react"
-import useAuth from "./useAuth"
+import useAuth from "../utils/useAuth"
 import { Navigate, useLocation } from "react-router"
 
 function RequireAuth ({ children }) {

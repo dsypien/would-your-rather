@@ -2,7 +2,7 @@ import React from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import { Nav, Navbar } from "react-bootstrap"
 import { connect } from "react-redux"
-import useAuth from "./useAuth"
+import useAuth from "../utils/useAuth"
 
 
 function Navigation (props) {   

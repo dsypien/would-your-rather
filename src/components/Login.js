@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { useLocation, useNavigate } from "react-router-dom"
-import useAuth from "./useAuth"
+import useAuth from "../utils/useAuth"
 
 const Login = (props) => {
    const [user, setUser] = React.useState("")
