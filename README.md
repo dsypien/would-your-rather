@@ -1,9 +1,9 @@
 [![Edit would-you-rather](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/embed/strange-oskar-36rc9?fontsize=14&hidenavigation=1&theme=dark)
 
 # Would You Rather
-Would you rather is a fun game where the user is posed a question with two conflicting scenarios.  The user can answer the question and see how their friends answered in the polling results.  This is the final project in the React Nanodegree course I took with Udacity.  
+In this project I utilized React and Redux to build a web app that allows a user to play the "Would You Rather" game.
 
-In this project I utilized React and Redux to build a web app that allows a user to play a "Would Your Rather" game.
+"Would You Rather" is a fun game where the user is posed a question with two conflicting scenarios.  The user can answer the question and see how their friends answered in the polling results.  This is the final project in the React Nanodegree course I took with Udacity.  
 
 The app allows the user to
    * View a list of unanswered questions
