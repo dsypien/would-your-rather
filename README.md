@@ -6,10 +6,11 @@ This is the final project in the React Nanodegree course I took with Udacity.
 In this project I utilized React and Redux to build a web app that allows a user to play a "Would Your Rather" game.
 
 Would you rather is a fun game where the user has to chose between two scenarios.  
-![alt text](https://github.com/dsypien/would-you-rather/screenshots/Questions.png?raw=true)
+![alt text](https://github.com/dsypien/would-your-rather/blob/master/screenshots/Question.png)
+
 
 Once the user has answered the question, they can see the polling results.
-![alt text](https://github.com/dsypien/would-you-rather/screenshots/PollResult.png?raw=true)
+![alt text](https://github.com/dsypien/would-your-rather/blob/master/screenshots/PollResult.png)
 
 The app allows the user to
    * View a list of unanswered questions
